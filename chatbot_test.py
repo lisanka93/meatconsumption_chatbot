@@ -7,7 +7,7 @@ from query import *
 app = Flask(__name__)
 
 #access token of ArgHealthBot Application in Facebook
-ACCESS_TOKEN = "EAACJjQRK0ucBAGi6KrrhPyudOQO61yVV3vZC8N2E4jUvJ12VlfVXjTpREkZAgKrMoxIqqiNbG9yzVqdptbm6veJBXL8Mec08BEjfZCfZBgHTsqABigzpBZAaKA0to0RAmMdzfO5YZAZBiZAfhWu4anLJXlejVE0GShWnCtcZA0V9O2wZDZD"
+ACCESS_TOKEN = "EAAFEzTNmiTwBAJltvhaZCjkZCNq6fpWcbLFY4dgVTwZAbS9tOWOKS3a4svX8TR9VKvUzO4zF5r5Nl02WnfgZBUeyuaG33lclBuet0S9YX4vZAibGKRZA5DLm3oJwooIjOs1t69b3t1i1JdWrataC8JQO1rhUMP6gUMmI8WsZBqdFQZDZD"
 # set of unique user id's
 user_ids =  set()
 users = {}
@@ -221,7 +221,7 @@ def handle_incoming_messages():
             elif message == 'my health':
                 print 'works'
                 users[key_id] = [['PPC1', 'PPC2', 'PPC3',
-                                'PPC4', 'PPC5','PPC6', 'PPC7'
+                                'PPC4', 'PPC5','PPC6', 'PPC7',
                                 'NPC1', 'NPC2', 'NPC3'
                                 'NPC4', 'NPC5', 'NPC6'], []]
                 bot_reply = "Okay. What is the main reason you eat meat? Select one of the following: \n 1: I eat meat because of its nutritional value and source of protein \n 2: I eat meat because it\'s filling \n 3: I eat meat because it tastes good! \n 4: I eat meat because it\'s quick and easy to prepare \n 5: I eat meat because it\'s healthy and contributes to a balanced diet. \n 6: I eat meat because it offers more variety to my meals \n 7: Other"
@@ -259,6 +259,9 @@ def handle_incoming_messages():
                     checkpointlists[key_id].append(100)
                     return 'ok'
                 except:
+                    print "exception1"
+                    import traceback
+                    traceback.print_exc()
                     bot_reply = 'I ran out of arguments :) let\'s end the chat here. One more question. Please tell me what applies most to you:  \n  1: I definitely wouldn\'t  \n 2: I probably wouldn\'t  \n 3: I might   \n 4: I probably would   \n 5: I definitely would  \n consider reducing my meat consumption'
 
                     checkpointlists[key_id].append(3)
@@ -300,6 +303,9 @@ def handle_incoming_messages():
                 checkpointlists[key_id].append(100)
                 return 'ok'
             except:
+                print "exception 2"
+                import traceback
+                traceback.print_exc()
                 bot_reply = 'I ran out of arguments :) let\'s end the chat here. One more question. Please tell me what applies most to you:  \n 1: I definitely wouldn\'t  \n 2: I probably wouldn\'t  \n 3: I might   \n 4: I probably would   \n 5: I definitely would  \n consider reducing my meat consumption'
                 checkpointlists[key_id].append(3)
                 quick_reply_intention(sender, bot_reply)
@@ -319,4 +325,4 @@ def handle_incoming_messages():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    app.run(debug=True,host='0.0.0.0', port=5555)

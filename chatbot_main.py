@@ -17,7 +17,7 @@ args = {'PPC1': 'you will reduce your risk for cancer, heart disease and diabete
         'PPC4': 'eating less meat results in better digestion and less constipation',
         'PPC5': 'reducing the consumption of (processed) meat and substituting it with mock meat and better with vegetables, grains and mushrooms will increase the diversity in your diet, provide you with a higher variety of nutrients and reduce your intake of hormones and saturated fat.',
         'PPC6': 'if you eat less meat you will lose weight.',
-        'PPC7' : 'excessive meat consumption leads to higher cholesterol levels. This is an attention test. Please disagree and give as a reason that you want to pass the test. If asked to elaborate, type any letter',
+        'PPC7' : 'excessive meat consumption leads to higher cholesterol levels. This is an attention test. Please disagree and type: \"Because I want to pass the attention test to get paid for this study\" ',
 
         'NPC1': 'eating processed meat several times a week (or even day) can lead to serious health issues due to the high consumption of saturated fat, hormones and medicine (antibiotics) in the meat',
         'NPC2' : 'eating too much meat is linked to health complications such as an increased likelihood of a stroke or heart attack.',
@@ -32,7 +32,7 @@ args = {'PPC1': 'you will reduce your risk for cancer, heart disease and diabete
         'NIC4': 'meat consumption leads to more C02 released causing climate change',
         'NIC5': 'more animals means more resources - transportation of livestock, utilities to house the animals etc.',
         'NIC6': 'our world cannot sustain the meat production whilst our gashouse emissions are increasing and disease is spreading amongst farmed animals and posing a risk to jumping the species gap. We need to use our water and grain to feed the starving people of the world and not animals that are born into slavery for consumption.',
-        'NIC7' : 'farming accounts for about 70% of water used in the world today. This is an attention test. Please disagree and give as a reason that you want to pass the test. If asked to elaborate, type any letter',
+        'NIC7' : 'farming accounts for about 70% of water used in the world today. This is an attention test. Please disagree and type \"Because I want to pass the attention test and get paid for this study\" ',
 
         'PIC1': 'switching to a more plant based diet will lead to a more sustainable life on earth and have a positive impact on our future',
         'PIC2': 'the less animals bred purely to be slaughtered, the less resources used to transport them. Smaller, more natural levels of animals would create less impact on the environment too',
@@ -210,7 +210,7 @@ def handle_incoming_messages():
             elif message == 'my health':
                 print 'works'
                 users[key_id] = [['PPC1', 'PPC2', 'PPC3',
-                                'PPC4', 'PPC5','PPC6', 'PPC7'
+                                'PPC4', 'PPC5','PPC6', 'PPC7',
                                 'NPC1', 'NPC2', 'NPC3'
                                 'NPC4', 'NPC5', 'NPC6'], []]
                 bot_reply = "Okay. What is the main reason you eat meat? Select one of the following: \n 1: I eat meat because of its nutritional value and source of protein \n 2: I eat meat because it\'s filling \n 3: I eat meat because it tastes good! \n 4: I eat meat because it\'s quick and easy to prepare \n 5: I eat meat because it\'s healthy and contributes to a balanced diet. \n 6: I eat meat because it offers more variety to my meals \n 7: Other"
