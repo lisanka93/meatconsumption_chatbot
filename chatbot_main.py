@@ -211,7 +211,7 @@ def handle_incoming_messages():
                 print 'works'
                 users[key_id] = [['PPC1', 'PPC2', 'PPC3',
                                 'PPC4', 'PPC5','PPC6', 'PPC7',
-                                'NPC1', 'NPC2', 'NPC3'
+                                'NPC1', 'NPC2', 'NPC3',
                                 'NPC4', 'NPC5', 'NPC6'], []]
                 bot_reply = "Okay. What is the main reason you eat meat? Select one of the following: \n 1: I eat meat because of its nutritional value and source of protein \n 2: I eat meat because it\'s filling \n 3: I eat meat because it tastes good! \n 4: I eat meat because it\'s quick and easy to prepare \n 5: I eat meat because it\'s healthy and contributes to a balanced diet. \n 6: I eat meat because it offers more variety to my meals \n 7: Other"
                 checkpointlists[key_id].append(1)
