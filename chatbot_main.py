@@ -177,7 +177,7 @@ def handle_incoming_messages():
             return 'ok'
 
         if checkpointlists[key_id][-1] == 3:
-            bot_reply = 'awesome, thanks! please provide your prolific ID. here is the completion code: PVY0LZHP \n and the completion URL: https://app.prolific.ac/submissions/complete?cc=PVY0LZHP'
+            bot_reply = 'awesome, thanks! please provide your prolific ID. here is the completion code: PVY0LZHP \n and the completion URL: https://app.prolific.ac/submissions/complete?cc=PVY0LZHP \n please take into account that approval might take a while as all chats have to be individually assessed to ensure fair payment. Thanks!'
             reply(sender, bot_reply)
             checkpointlists[key_id].append(4)
             return 'ok'
@@ -258,7 +258,16 @@ def handle_incoming_messages():
                 reply(sender, bot_reply)
                 checkpointlists[key_id].append(1)
                 return 'ok'
-
+            else:
+                bot_reply = 'seems like you did not disagree when asked to, in the attention test. But I will forgive you, let\'s move on, what do you think about this reason:'
+                reply(sender, bot_reply)
+                reply_CA, possible_CAs, used_CAs = chatbot_reponse(users[key_id][0], users[key_id][1])
+                users[key_id][0] = possible_CAs
+                users[key_id][1] = used_CAs
+                bot_reply = args[reply_CA]
+                quick_reply_agreement(sender, bot_reply)
+                checkpointlists[key_id].append(100)
+                return 'ok'
         """
         if message == 'stop':
             bot_reply = "thank you so much for participating in this study! One more question. How likely you would consider reducing your meat consumption \n  1: Definitely wouldn\'t consider reducing meat consumption \n 2: Probably wouldn\'t consider reducing meat consumption \n 3: Might consider reducing meat consumption \n 4: Probably would consider reducing meat condumption \n 5: Definitely would consider reducing meat consumption"
