@@ -177,7 +177,7 @@ def handle_incoming_messages():
             return 'ok'
 
         if checkpointlists[key_id][-1] == 3:
-            bot_reply = 'awesome, thanks! please provide your prolific ID. '
+            bot_reply = 'awesome, thanks! please provide your prolific ID. Make sure it is correct. Failure to provide your correct prolific ID will result in not getting paid at all.'
             reply(sender, bot_reply)
             checkpointlists[key_id].append(4)
             return 'ok'
