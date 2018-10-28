@@ -132,11 +132,12 @@ def handle_incoming_messages():
 
     except KeyError:
         #should never get here
+        print "KEYERROR 1"
         sender = 'defaultsender'
         message = 'defaultmessage'
 
 
-    print checkpointlists
+    #print checkpointlists
     #converting message to string for easier NLP analysis later
     message = message.lower().encode('utf-8')
     #sender as string just in case
@@ -153,6 +154,7 @@ def handle_incoming_messages():
             quick_reply_yes(sender, bot_reply)
             return "ok"
         except:
+            print "ERROR 2"
             checkpointlists[key_id] = [0.125] #instantiating
 
             bot_reply = 'Welcome. A few things before we start: Please type your answers into one message (don\'t send several messages). The chat will naturally come to an end. At the end of the chat you will get the prolific completion code. If the chatbot for some reason stops replying, please just send your prolific ID and end the chat. This chat does not work on the Messenget Lite app. All good?'
@@ -334,6 +336,8 @@ def handle_incoming_messages():
                 return 'ok'
             '''
         except:
+
+            print "ERROR 3 "
             if checkpointlists[key_id][-1] == 0.125:
                 bot_reply = 'Great! I will present you with reasons why you should consider reducing your meat consumption. You can either agree or disagree. If you disagree, I am interested why you don\'t agree with them. Are you ready?'
                 quick_reply_yes(sender, bot_reply)
