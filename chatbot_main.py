@@ -259,15 +259,23 @@ def handle_incoming_messages():
                 checkpointlists[key_id].append(1)
                 return 'ok'
             else:
-                bot_reply = 'seems like you did not agree or disagree when asked to. But I will forgive you, let\'s move on, what do you think about this reason:'
-                reply(sender, bot_reply)
-                reply_CA, possible_CAs, used_CAs = chatbot_reponse(users[key_id][0], users[key_id][1])
-                users[key_id][0] = possible_CAs
-                users[key_id][1] = used_CAs
-                bot_reply = args[reply_CA]
-                quick_reply_agreement(sender, bot_reply)
-                checkpointlists[key_id].append(100)
-                return 'ok'
+                try:
+                    reply_CA, possible_CAs, used_CAs = chatbot_reponse(users[key_id][0], users[key_id][1])
+                    bot_reply = 'seems like you did not agree or disagree when asked to. But I will forgive you, let\'s move on, what do you think about this reason:'
+                    reply(sender, bot_reply)
+                    users[key_id][0] = possible_CAs
+                    users[key_id][1] = used_CAs
+                    bot_reply = args[reply_CA]
+                    quick_reply_agreement(sender, bot_reply)
+                    checkpointlists[key_id].append(100)
+                    return 'ok'
+                except:
+                    bot_reply = 'I ran out of arguments :) let\'s end the chat here. One more question. Please tell me what applies most to you:  \n  1: I definitely wouldn\'t  \n 2: I probably wouldn\'t  \n 3: I might   \n 4: I probably would   \n 5: I definitely would  \n consider reducing my meat consumption'
+
+                    checkpointlists[key_id].append(3)
+                    quick_reply_intention(sender, bot_reply)
+                    return 'ok'
+
         """
         if message == 'stop':
             bot_reply = "thank you so much for participating in this study! One more question. How likely you would consider reducing your meat consumption \n  1: Definitely wouldn\'t consider reducing meat consumption \n 2: Probably wouldn\'t consider reducing meat consumption \n 3: Might consider reducing meat consumption \n 4: Probably would consider reducing meat condumption \n 5: Definitely would consider reducing meat consumption"
