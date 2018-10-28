@@ -177,13 +177,13 @@ def handle_incoming_messages():
             return 'ok'
 
         if checkpointlists[key_id][-1] == 3:
-            bot_reply = 'awesome, thanks! please provide your prolific ID. here is the completion code: PVY0LZHP \n and the completion URL: https://app.prolific.ac/submissions/complete?cc=PVY0LZHP \n please take into account that approval might take a while as all chats have to be individually assessed to ensure fair payment. Thanks!'
+            bot_reply = 'awesome, thanks! please provide your prolific ID. '
             reply(sender, bot_reply)
             checkpointlists[key_id].append(4)
             return 'ok'
 
         if checkpointlists[key_id][-1] == 4:
-            bot_reply = 'thanks :) good bye'
+            bot_reply = 'here is the completion code: PVY0LZHP \n and the completion URL: https://app.prolific.ac/submissions/complete?cc=PVY0LZHP \n please take into account that approval might take a while as all chats have to be individually assessed to ensure fair payment. Thanks! good bye'
             #checkpointlists[key_id].append(5)
 
             reply(sender, bot_reply)
