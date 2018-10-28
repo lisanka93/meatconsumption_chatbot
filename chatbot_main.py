@@ -148,7 +148,7 @@ def handle_incoming_messages():
         try:
             checkpointlists[key_id] = [0.125] #instantiating
 
-            bot_reply = 'Welcome. A few things before we start: Please type your answers into one message (don\'t send several messages). The chat will naturally come to an end. At the end of the chat you will get the prolific completion code. If the chatbot for some reason stops replying, please just send your prolific ID and end the chat. This chat does not work on the Messenget Lite app. All good?'
+            bot_reply = 'Welcome. A few things before we start: Please type your answers into one message (don\'t send several messages). Pleae do NOT send \'likes\' or gifs and always select options when given. The chat will naturally come to an end. At the end of the chat you will get the prolific completion code. If the chatbot for some reason stops replying, please just send your prolific ID and end the chat. This chat does not work on the Messenget Lite app. All good?'
             #add user to set
             user_ids.add(key_id)
             quick_reply_yes(sender, bot_reply)
@@ -517,4 +517,4 @@ def handle_incoming_messages():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    app.run(debug=True,host='0.0.0.0', port=5000, threaded=True)
