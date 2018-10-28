@@ -146,7 +146,7 @@ def handle_incoming_messages():
     if key_id not in user_ids:
         checkpointlists[key_id] = [0.125] #instantiating
 
-        bot_reply = 'Welcome. A few things before we start: Please type your answers into one message (don\'t send several messages). The chat will naturally come to an end. At the end of the chat you will get the prolific completion code. This chat does not work on the Messenget Lite app. All good?'
+        bot_reply = 'Welcome. A few things before we start: Please type your answers into one message (don\'t send several messages). The chat will naturally come to an end. At the end of the chat you will get the prolific completion code. If the chatbot for some reason stops replying, please just send your prolific ID and end the chat. This chat does not work on the Messenget Lite app. All good?'
         #add user to set
         user_ids.add(key_id)
         quick_reply_yes(sender, bot_reply)
