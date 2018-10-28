@@ -43,7 +43,7 @@ args = {'PPC1': 'you will reduce your risk for cancer, heart disease and diabete
         }
 
 starter = ['But ', 'However, ']
-understanding = ['I understand :)', 'I get your point!', 'Ok, I see.', 'All right.' 'Fair enough!', 'I know what you mean', 'I take your point']
+understanding = ['I understand :)', 'I get your point!', 'Ok, I see.', 'All right.', 'Fair enough!', 'I know what you mean', 'I take your point']
 checkpointlists = {} #checkpoints to guide conversation a certain way
 #values = ['environment', 'health']
 
@@ -259,7 +259,7 @@ def handle_incoming_messages():
                 checkpointlists[key_id].append(1)
                 return 'ok'
             else:
-                bot_reply = 'seems like you did not disagree when asked to, in the attention test. But I will forgive you, let\'s move on, what do you think about this reason:'
+                bot_reply = 'seems like you did not agree or disagree when asked to. But I will forgive you, let\'s move on, what do you think about this reason:'
                 reply(sender, bot_reply)
                 reply_CA, possible_CAs, used_CAs = chatbot_reponse(users[key_id][0], users[key_id][1])
                 users[key_id][0] = possible_CAs
