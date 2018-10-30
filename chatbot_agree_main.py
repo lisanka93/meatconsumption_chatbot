@@ -7,7 +7,7 @@ from query import *
 app = Flask(__name__)
 
 #access token of ArgHealthBot Application in Facebook
-ACCESS_TOKEN = "EAAFEzTNmiTwBAFfR5YfzBdsydkl2P7SjQZB2rbog0ZBcEovhI6IAWEqfZCYdEaL8eViWcyABrQKuSZCF83PpblWHuQq8xPMb8cPOCwyiEUnGz4BqHrvyz4LyPjDwg8x0xNH9sTSBQPxZAwtH0iKbB5YMmu0DMEbIc8uHOtbuiKgZDZD"
+ACCESS_TOKEN = "EAACJjQRK0ucBAGi6KrrhPyudOQO61yVV3vZC8N2E4jUvJ12VlfVXjTpREkZAgKrMoxIqqiNbG9yzVqdptbm6veJBXL8Mec08BEjfZCfZBgHTsqABigzpBZAaKA0to0RAmMdzfO5YZAZBiZAfhWu4anLJXlejVE0GShWnCtcZA0V9O2wZDZD"
 # set of unique user id's
 user_ids =  set()
 users = {}
@@ -504,4 +504,4 @@ def handle_incoming_messages():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0', port=5555, threaded=True)
+    app.run(debug=True,host='0.0.0.0', port=5000, threaded=True)

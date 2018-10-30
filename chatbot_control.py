@@ -14,32 +14,19 @@ users = {}
 args = {'PPC1': 'you will reduce your risk for cancer, heart disease and diabetes if you cut down your meat consumption',
         'PPC2' : 'eating less meat improves your general health, enables your digestive system to process foods more easily and gives you more energy, leaving you feeling less sluggish and tired',
         'PPC3': 'your reduction of meat will leave you feeling better physically and mentally. There is less risk of health complications, including food poisoning and an increased benefit of adding plant based foods to your diet to make it healthier and more varied',
-        'PPC4': 'eating less meat results in better digestion and less constipation',
-        'PPC5': 'reducing the consumption of (processed) meat and substituting it with mock meat and better with vegetables, grains and mushrooms will increase the diversity in your diet, provide you with a higher variety of nutrients and reduce your intake of hormones and saturated fat.',
-        'PPC6': 'if you eat less meat you will lose weight.',
         'PPC7' : 'excessive meat consumption leads to higher cholesterol levels. This is an attention test. Please disagree and type: \"Because I want to pass the attention test to get paid for this study\" ',
 
         'NPC1': 'eating processed meat several times a week (or even day) can lead to serious health issues due to the high consumption of saturated fat, hormones and medicine (antibiotics) in the meat',
         'NPC2' : 'eating too much meat is linked to health complications such as an increased likelihood of a stroke or heart attack.',
         'NPC3': 'excessive consumption of meat can lead to many health problems, including heart disease, cancer and high blood pressure',
-        'NPC4': 'it may make you antibiotic resistant since the antibiotics that we depend on to treat human illnesses are now used to promote growth in animals and to keep them alive in horrific living conditions that would otherwise kill them',
-        'NPC5': 'meat consumption was linked to cancer, heart disease and diabetes.',
-        'NPC6': 'red meats have been proven to have negative effects on the human digestive system, causing harm with potential illness.',
 
         'NIC1': 'raising animals for food requires massive amounts of land, food, energy, and water and causes immense animal suffering',
         'NIC2': 'meat consumption is not sustainable and will lead to environmental problems that will impact our future life on earth',
         'NIC3': 'if people continue consuming meat in such high quantities as today, problems like deforestation, water shortages and greenhouse gas emissions will continue to grow',
-        'NIC4': 'meat consumption leads to more C02 released causing climate change',
-        'NIC5': 'more animals means more resources - transportation of livestock, utilities to house the animals etc.',
-        'NIC6': 'our world cannot sustain the meat production whilst our gashouse emissions are increasing and disease is spreading amongst farmed animals and posing a risk to jumping the species gap. We need to use our water and grain to feed the starving people of the world and not animals that are born into slavery for consumption.',
-        'NIC7' : 'farming accounts for about 70% of water used in the world today. This is an attention test. Please disagree and type \"Because I want to pass the attention test and get paid for this study\" ',
 
         'PIC1': 'switching to a more plant based diet will lead to a more sustainable life on earth and have a positive impact on our future',
         'PIC2': 'the less animals bred purely to be slaughtered, the less resources used to transport them. Smaller, more natural levels of animals would create less impact on the environment too',
-        'PIC3': 'eating less meat will have a positive effect upon the environment, helping to slow down the rapid rates of deforestation',
-        'PIC4': 'reducing meat consumption will lead to less deforestation, water shortages, greenhouse emissions, not to mention animal cruelty',
-        'PIC5': 'the less meat people eat, the less land being cleared for livestock which means more forests etc & more biodiversity',
-        'PIC6': 'reducing meat consumption will lead to less animal cruelty',
+        'PIC3': 'eating less meat will have a positive effect upon the environment, helping to slow down the rapid rates of deforestation'
         }
 
 starter = ['But ', 'However, ']
@@ -213,19 +200,23 @@ def handle_incoming_messages():
             if checkpointlists[key_id][-1] == 0 :
                 if message == 'environment/animals':
                     users[key_id] = [['NIC1', 'NIC2', 'NIC3',
-                                    'NIC4', 'NIC5','NIC6', 'NIC7',
                                     'PIC1', 'PIC2', 'PIC3',
-                                    'PIC4', 'PIC5','PIC6'], []]
+                                    'PPC1', 'PPC2', 'PPC3',
+                                    'PPC7',
+                                    'NPC1', 'NPC2', 'NPC3'
+                                    ], []]
                     bot_reply = "Okay. What is the main reason you eat meat? Select one of the following: \n 1: I eat meat because of its nutritional value and source of protein \n 2: I eat meat because it\'s filling \n 3: I eat meat because it tastes good! \n 4: I eat meat because it\'s quick and easy to prepare \n 5: I eat meat because it\'s healthy and contributes to a balanced diet. \n 6: I eat meat because it offers more variety to my meals \n 7: Other"
                     checkpointlists[key_id].append(1)
                     quick_reply_mainarg(sender, bot_reply)
                     return 'ok'
                 elif message == 'my health':
                     print 'works'
-                    users[key_id] = [['PPC1', 'PPC2', 'PPC3',
-                                    'PPC4', 'PPC5','PPC6', 'PPC7',
-                                    'NPC1', 'NPC2', 'NPC3',
-                                    'NPC4', 'NPC5', 'NPC6'], []]
+                    users[key_id] = [['NIC1', 'NIC2', 'NIC3',
+                                    'PIC1', 'PIC2', 'PIC3',
+                                    'PPC1', 'PPC2', 'PPC3',
+                                    'PPC7',
+                                    'NPC1', 'NPC2', 'NPC3'
+                                    ], []]
                     bot_reply = "Okay. What is the main reason you eat meat? Select one of the following: \n 1: I eat meat because of its nutritional value and source of protein \n 2: I eat meat because it\'s filling \n 3: I eat meat because it tastes good! \n 4: I eat meat because it\'s quick and easy to prepare \n 5: I eat meat because it\'s healthy and contributes to a balanced diet. \n 6: I eat meat because it offers more variety to my meals \n 7: Other"
                     checkpointlists[key_id].append(1)
                     quick_reply_mainarg(sender, bot_reply)
